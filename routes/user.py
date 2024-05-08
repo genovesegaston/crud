@@ -3,21 +3,17 @@ from fastapi import APIRouter
 from config.db import conn
 #importar schema db
 from models.user import users
+#importar esquema de Usuario (Clase User)
+from schemas.user import User
 
 user = APIRouter()
 
 @user.get("/users")
 async def get_users():
-    return conn.execute(users.select().fetch_all())
+    return conn.execute(users.select()).fetchall()
 
-@user.get("/us")
-async def saludar():
-    return "Hola bienvenido"    
+@user.post("/users")
+async def create_user(user:User):
+    return user   
 
-@user.get("/usa")
-async def saludar():
-    return "Hola bienvenido"    
-
-@user.get("/use")
-async def saludar():
-    return "Hola bienvenido"    
+ 
