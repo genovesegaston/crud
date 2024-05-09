@@ -3,4 +3,3 @@ sqlalchemy
 fastapi
 mysql-connector-python
 autopep8
-criptography
