@@ -14,6 +14,7 @@ async def get_users():
 
 @user.post("/users")
 async def create_user(user:User):
-    return user   
+    print(user)
+    return f"hola {user.name}"   
 
  

@@ -7,11 +7,12 @@ app = FastAPI()
 
 app.include_router(user)
 
-@app.get("/user")
-async def get_user(user:User):
+""" @app.get("/user")
+async def get_user():
    return conn.execute(select()).fetchall()
      
 
 @app.post("/user")
-async def  crear_usuario():
-    pass
+async def  create_user(user:User):
+    print(user)
+    return ("se a creado el usuario") """
